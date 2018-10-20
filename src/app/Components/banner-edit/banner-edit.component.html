@@ -1,0 +1,52 @@
+<main class="middle-content">
+  <!-- Page Title Start -->
+  <div class="page_title_block">
+      <h1 class="page_title">Merchant Management</h1>
+  </div>
+  <!-- Page Title End -->
+  <div class="content-section">
+      <form class="login_box_outer" >
+          <div class="order-view mt30 max-WT-700 mrgn-0-auto">
+              <div class="main-block-innner mb40 mt40">
+                  <div class="add-store-block input-style">
+                    <form [formGroup]='bannerForm'>
+                      <div class="form-group row mb40 align-items-start">
+                          <label class="col-md-5"><span style="color: red">*</span>Banner Image :</label>
+                          <div class="col-md-7">
+                              <div class="user-profile bannerimg">
+                                 <div class="image-box mb0">
+                                     <img src="{{imageUrl || 'assets/img/placeholder.png'}}" class="profile-pic"> 
+                                      <label class="upload-label">
+                                       <input type="file" (change)='fileSelect($event)' accept="image/jpeg,image/jpg,image/png">
+                                        <i class="fas fa-camera"></i>
+                                        <!-- <div class="errMsg" *ngIf="bannerForm.get('image').dirty && bannerForm.get('image').invalid"> 
+                                                <span  [ngClass]="{error:bannerForm.get('image').hasError('required')}" *ngIf="bannerForm.get('image').hasError('required')">*Please select banner image.</span>
+                                        </div> -->
+                                    </label>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group row align-items-start">
+                          <label class="col-md-5"><span style="color: red">*</span>Banner Description :</label>
+                          <div class="col-md-7">
+                               <textarea class="form-control common-textarea" formControlName='description'  maxlength="60" id='description' ></textarea>
+                               <div class="errMsg" *ngIf="bannerForm.get('description').dirty && bannerForm.get('description').invalid"  > 
+                                    <span  [ngClass]="{error:bannerForm.get('description').hasError('required')}" *ngIf="bannerForm.get('description').hasError('required')">*Please enter description.</span>
+                                    <span  [ngClass]="{error:bannerForm.get('description').hasError('minlength')}" *ngIf="bannerForm.get('description').hasError('minlength')">*Description should be of at least 10 characters.</span>
+                                  </div>
+                          </div>
+                      </div>
+                      <div class="text-center mt40">
+                         <a  class="btn btn-large  max-WT-150 font-100 btn-grey" (click)='back()'>Back</a>
+                          <button  type='button' class="btn btn-large  max-WT-150 font-100 btn-green mL10" (click)='save()' [disabled]='bannerForm.invalid || !imageUrl'>Save</button>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+</main>
+<!-- Middle Content End -->
+<app-header-footer></app-header-footer>

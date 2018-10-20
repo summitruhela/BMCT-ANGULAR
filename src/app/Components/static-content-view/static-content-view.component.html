@@ -1,0 +1,44 @@
+<main class="middle-content">
+    <!-- Page Title Start -->
+    <div class="page_title_block">
+        <h1 class="page_title">Content Management</h1>
+        <!-- <div class="common-bredcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="user-management.html">User Management </a></li>
+                <li class="breadcrumb-item active">Transaction Details</li>
+            </ol>
+  
+        </div> -->
+    </div>
+    <!-- Page Title End -->
+  <div class="content-section">
+   <div class="terms-page">
+       <form class="middle-form">
+          <div class="form-group row">
+            <label class="common-label col-md-12">Title *</label>
+            <div class="col-md-12">
+             
+             <p> {{title}}</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="common-label col-md-12">Body *</label>
+              <div class="col-md-12">
+                   <p [innerHTML]="body">
+               
+                   </p>
+              </div>
+          </div>
+          <div class="form-group button-box row">
+        
+        <div class="col-6">
+            <a [routerLink]="['/static-contents']" class="btn btn-large btn-gray btn-block"> Back</a>
+        </div>
+      </div>
+       </form>
+   </div> 
+  </div>
+  </main>
+  <!-- Middle Content End -->
+  <app-header-footer></app-header-footer>
+  

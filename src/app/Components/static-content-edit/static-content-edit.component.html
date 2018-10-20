@@ -1,0 +1,47 @@
+<main class="middle-content">
+  <!-- Page Title Start -->
+  <div class="page_title_block">
+      <h1 class="page_title">Content Management</h1>
+      <!-- <div class="common-bredcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="user-management.html">User Management </a></li>
+              <li class="breadcrumb-item active">Transaction Details</li>
+          </ol>
+
+      </div> -->
+  </div>
+  <!-- Page Title End -->
+<div class="content-section">
+ <div class="terms-page">
+     <form class="middle-form" [formGroup]='staticForm'>
+        <div class="form-group row">
+          <label class="common-label col-md-12">Title <span style="color: red">*</span></label>
+          <div class="col-md-12">
+           <!-- <input class="form-control" type="text" value="Terms & Condition" formControlName='title' required/> -->
+          <strong><p>{{title}}</p></strong> 
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="common-label col-md-12">Body <span style="color: red">*</span></label>
+            <div class="col-md-12">
+                 <!-- <textarea name="textarea" class="jqte-test form-control" formControlName='body'>
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+               </textarea> -->
+               <ckeditor debounce="500"  formControlName='body' [config]="ckEditorConfig"></ckeditor>
+               <!-- <ck-editor name="editor1"  skin="moono-lisa" language="en" [fullPage]="true"></ck-editor> -->
+            </div>
+        </div>
+        <div class="form-group button-box row">
+        <div class="col-6 ">
+        <button  (click)='save()' type="button" class="btn btn-green btn-large btn-block" [disabled]='staticForm.invalid'>Save</button>         
+         </div>
+      <div class="col-6">
+          <a (click)='cancel()' class="btn btn-large btn-gray btn-block"> Cancel</a>
+      </div>
+    </div>
+     </form>
+ </div> 
+</div>
+</main>
+<!-- Middle Content End -->
+<app-header-footer></app-header-footer>
