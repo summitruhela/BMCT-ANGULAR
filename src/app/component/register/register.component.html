@@ -1,0 +1,138 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <main class="middle-content2 noside">
+        <div class="content-section dashboard-block">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-12">
+
+                        <div style="height: 300px;" class='texting'>
+                            <slideshow [height]="'350px'" [minHeight]="'350px'" [autoPlay]="true" [showCaptions]='true' [showArrows]="false" [imageUrls]="imageUrls" [lazyLoad]="imageUrls?.length > 1" [autoPlayWaitForLazyLoad]="true" [autoPlayInterval]=6000>
+                            </slideshow>
+                        </div>
+
+                        <form class="login_box_outer w-100" style="margin-top: 10%;" [formGroup]="registrationForm">
+                            <div class="login-box max-WT-650">
+                                <div class="login-right-block">
+                                    <div class="login-box-body">
+                                        <div class="form-group">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-control" placeholder="First Name" formControlName='fName' maxlength="100">
+                                            <div class="errMsg" *ngIf="registrationForm.controls['fName'].dirty && registrationForm.controls['fName'].invalid">
+                                                <span style='color:red' *ngIf="registrationForm.controls['fName'].hasError('required')">*Please enter first name.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['fName'].hasError('minlength')">*First name must be between 2 to 100 characters.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['fName'].hasError('pattern') && !registrationForm.controls['fName'].hasError('minlength')">*Please enter valid first name.</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-control " placeholder="Last Name" formControlName='lName' maxlength="100">
+                                            <div class="errMsg" *ngIf="registrationForm.controls['lName'].dirty && registrationForm.controls['lName'].invalid">
+                                                <span style='color:red' *ngIf="registrationForm.controls['lName'].hasError('minlength')">*Last name must be between 2 to 100 characters.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['lName'].hasError('pattern') && !registrationForm.controls['lName'].hasError('minlength')">*Please enter valid last name.</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control " placeholder="Email" formControlName='email_ID' maxlength="100">
+                                            <div class="errMsg" *ngIf="registrationForm.controls['email_ID'].dirty && registrationForm.controls['email_ID'].invalid">
+                                                <span style='color:red' *ngIf="registrationForm.controls['email_ID'].hasError('required')">*Please enter an email.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['email_ID'].hasError('pattern')">*Please enter valid email.</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Password</label>
+                                            <input type="password" class="form-control " placeholder="Password" formControlName='password' maxlength="16">
+                                            <div class="errMsg" *ngIf="registrationForm.controls['password'].dirty && registrationForm.controls['password'].invalid">
+                                                <span style='color:red' *ngIf="registrationForm.controls['password'].hasError('required')">*Please enter a password.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['password'].hasError('minlength')">*Password must be between 8 to 16 characters.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['password'].hasError('pattern') && !registrationForm.controls['password'].hasError('minlength')">*Please enter valid password.</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Phone Number</label>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <select type='text' class="form-control mb5" formControlName='prefix'>
+                              <option value=''>Select country code</option>
+                              <option *ngFor="let country of codeArray" [value]="country.code">{{country.code}} ( {{country.country}} )</option> 
+                              </select>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <input type="text" class="form-control " placeholder="Phone No." formControlName='phoneNumber' maxlength="14">
+                                                    <div class="errMsg" *ngIf="registrationForm.controls['phoneNumber'].dirty && registrationForm.controls['phoneNumber'].invalid">
+                                                        <span style='color:red' *ngIf="registrationForm.controls['phoneNumber'].hasError('required')">*Please enter mobile number.</span>
+                                                        <span style='color:red' *ngIf="registrationForm.controls['phoneNumber'].hasError('pattern')">*Please enter valid mobile number.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Address</label>
+                                            <div class="form-group row">
+                                                <div class="input-container d-flex justify-content-start mb10 col-12">
+                                                    <input type="text" class="google-place-input form-control w-100 d-inline-block" google-place (onSelect)="setAddress($event)" placeholder="Type address.." id='location'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Company Name</label>
+                                            <input type="text" class="form-control " placeholder="Company Name" formControlName='compName' maxlength="100">
+                                            <div class="errMsg" *ngIf="registrationForm.controls['compName'].dirty && registrationForm.controls['compName'].invalid">
+                                                <span style='color:red' *ngIf="registrationForm.controls['compName'].hasError('required')">*Please enter company name.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['compName'].hasError('minlength')">*Company name must be between 2 to 100 characters.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['compName'].hasError('pattern') && !registrationForm.controls['compName'].hasError('minlength')">*Please enter valid Company name.</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Registration Number</label>
+                                            <input type="text" class="form-control " placeholder="Registration Number (Optional)" formControlName='regNumber' maxlength="100">
+                                            <div class="errMsg" *ngIf="registrationForm.controls['regNumber'].dirty && registrationForm.controls['regNumber'].invalid">
+                                                <span style='color:red' *ngIf="registrationForm.controls['regNumber'].hasError('minlength')">*Registration Number must be between 2 to 100 characters.</span>
+                                                <span style='color:red' *ngIf="registrationForm.controls['regNumber'].hasError('pattern') && !registrationForm.controls['regNumber'].hasError('minlength')">*Please enter valid registration number.</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Merchant Website</label>
+                                            <input type="text" class="form-control " [formControl]="registrationForm.controls['merchantWebsite']" placeholder="Merchant Website URL(Optional)" maxlength="60">
+                                            <div class="errMsg" *ngIf="registrationForm.controls['merchantWebsite'].dirty && registrationForm.controls['merchantWebsite'].invalid">
+                                                <span style='color:red' *ngIf="registrationForm.controls['merchantWebsite'].hasError('pattern')">*Please enter website URL.</span>
+                                            </div>
+                                        </div>
+                                        <label class="col-md-5">Merchant Logo :</label>
+                                        <div class="col-md-7">
+                                            <div class="user-profile ">
+                                                <div class="image-box mb0 m0">
+                                                    <img src="{{imageUrl || 'assets/img/placeholder.png'}}" class="profile-pic">
+                                                    <label class="upload-label">
+                                     <input type="file" name=""  (change)='fileSelect($event)' accept="image/jpeg,image/jpg,image/png,image/ico">
+                                      <i class="fas fa-camera"></i>
+                                  </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt10">
+                                        <div class="col-sm-12">
+                                            <div class="remember-text ">
+                                                <label class="checkbox-design">
+                                <input type="checkbox" formControlName='accept'><span></span><a [routerLink]="['/termsAndConditions']" style="color: blue;" target='_blank'>I accept Terms & Services</a>
+                              </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt40">
+                                        <button type="button" class="btn btn-login btn-large  width100 font-100 fontsmall" (click)='doRegister()' [disabled]='registrationForm.invalid'>Register as a merchant</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,22 @@
+<header class="header">
+  <nav class="navbar clearfix">
+      <div class="logo-box">
+          <a class="navbar-brand logo" >
+              <img src="assets/img/logo.png" alt="logo" class="lg-logo">
+              <!-- <img src="img/sm-logo.png" alt="logo" class="sm-logo"> -->
+          </a>
+
+      </div>
+      <div class="page_title_block text-center">
+          <h1 class="page_title" *ngIf="state=='register'">Register as a Merchant</h1>
+          <h1 class="page_title" *ngIf="state=='privacyPolicy'">Privacy Policy</h1>
+          <h1 class="page_title" *ngIf="state=='termsAndConditions'">Terms & Services</h1>
+      </div>
+      <!-- <div class="header-right-part">
+          <button class="btn btn-toggle" type="button">
+                      <i class="fas fa-bars"></i>
+                  </button>
+          <button class="btn btn-outline-secondary btn-mobsearch" type="button"><i class="fas fa-search"></i></button>
+      </div> -->
+  </nav>
+</header>

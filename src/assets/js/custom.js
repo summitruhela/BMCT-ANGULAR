@@ -56,16 +56,16 @@ $(document).ready(function() {
 
     /* ============Zoom Effect End========= */
 
-    // $(".btn-toggle,.close_panel").click(function() {
-    //     $("body").toggleClass("toggle-wrapper");
-    // });
+    $(".btn-toggle,.close_panel").click(function() {
+        $("body").toggleClass("toggle-wrapper");
+    });
 
 
     $(document).on("click", ".top-user-img", function() {
         $(".head-drop-down").toggleClass("show");
     });
 
-    $('.datepicker').datepicker();
+    //$('.datepicker').datepicker();
     /* =====Side Panel=== */
     if ($(window).width() < 768) {
         $('body').removeClass('toggle-wrapper');
@@ -99,13 +99,13 @@ $(document).ready(function() {
     });
 
     /* ============Nice Scroll============= */
-    var nice = $("html").niceScroll();
-    $(".scroll-section, .sidebar").niceScroll({
-        cursorborder: "",
-        cursorcolor: "#EFC0ED",
-        boxzoom: false
+    // var nice = $("html").niceScroll();
+    // $(".scroll-section, .sidebar").niceScroll({
+    //     cursorborder: "",
+    //     cursorcolor: "#EFC0ED",
+    //     boxzoom: false
 
-    });
+    // });
 
 
     /* =================Upload file========== */

@@ -1,7 +1,7 @@
 import { Directive, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 // declare function require(path: string): any;
 // var google = require('@types/googlemaps');
-// declare const google: any;
+declare const google: any;
 // const google = require('@types/googlemaps');
 
 @Directive({
@@ -54,6 +54,8 @@ private element: HTMLInputElement
       this.onSelect.emit(this.getFormattedAddress(autocomplete.getPlace(),autocomplete.getPlace().geometry.location.lat(),autocomplete.getPlace().geometry.location.lng()));
     });
   }
- 
+  getLatLng(){
+
+  }
 
 }
