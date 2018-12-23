@@ -1,0 +1,66 @@
+<!--Business Details Screen Start Here-->
+<div class="business_detailswrap">
+  <div class="businessrttopbg"></div>
+  <div class="wakilogo"></div>
+  <div class="businConbx">
+    <div class="businesstextrow"><img src="../../assets/img/business_details_text.png" alt="" /></div>
+    <div class="sminfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad miemque laudantium, totam rem aperiam, eaque ipsa quae ab illo iem
+      aperiam,m ipsum dolor sit amet, consectetur adipisicing elit, lore magna aliqua. Ut enim ad miemque lauda</div>
+    <div class="businessfrombx">
+      <form [formGroup]='formgroup'>
+        <div class="form-group">
+          <input class="form-control" type="text" [formControl]="formgroup.controls['business']" placeholder="Business Name" />
+          <div class="error_box clearfix">
+            <p *ngIf="formgroup.controls['business'].hasError('required') && formgroup.controls['business'].dirty"
+              style="color:red;font-size:14px;">*BusinessName is required</p>
+            <p *ngIf="formgroup.controls['business'].hasError('pattern') && formgroup.controls['business'].dirty" style="color:red;font-size:14px;">*Please
+              enter valid email.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="number" [formControl]="formgroup.controls['phone']" placeholder="Phone no." />
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" [formControl]="formgroup.controls['email']" placeholder="Email Address" />
+          <div class="error_box clearfix">
+            <p *ngIf="formgroup.controls['email'].hasError('required') && formgroup.controls['email'].dirty" style="color:red;font-size:14px;">*Email
+              is required</p>
+            <p *ngIf="formgroup.controls['email'].hasError('pattern') && formgroup.controls['email'].dirty" style="color:red;font-size:14px;">*Please
+              enter valid email.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <select class="form-control custom_select" name="basic" id="ex-search" multiple>
+  <option hidden selected>Selling Product Types</option>
+  <option *ngFor="let item of event" value='item.category'>{{item.category}}</option>
+  <option value="1">Apparels</option>
+  <option value="2">Food Items</option>
+  <option value="3">Perfumes</option>
+  <option value="4">Electronics </option>
+  </select> -->
+          <ng-multiselect-dropdown [placeholder]="'Select your category'" [data]="categoryList" [formControl]="formgroup.controls['categorySelect']"
+            [settings]="dropdownSettings">
+          </ng-multiselect-dropdown>
+          <!-- <select class="form-control custom_select" name="basic" id="ex-search" >
+  <option hidden selected>select Token</option>
+  <option *ngFor="let item of event" value='item.categoryName'>{{item.categoryName}}</option>
+  </select> -->
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" [formControl]="formgroup.controls['address']" placeholder="Street Address" />
+        </div>
+        <div class="form-group">
+          <ng-select [options]="options" [displayKey]="displayKey" [disable]="isDisable" [styleGuide]="styleGuide"
+            [isDatalist]="isDataList" [searchKeys]="searchKeys" [formControl]="selectBox" [(ngModel)]="selectBox"
+            (onChange)="onChange($event)"></ng-select>
+        </div>
+        <tag-input [(ngModel)]='items'></tag-input>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary businessbtn" [disabled]="!formgroup.valid" (click)="addBusinessDetail(formgroup.value)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--Business Details Screen End Here-->

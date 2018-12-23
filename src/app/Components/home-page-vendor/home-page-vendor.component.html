@@ -1,0 +1,263 @@
+<!--Dashboard Screen Start Here-->
+<div id="wrapper">
+  <!--Header Start Here-->
+  <app-header></app-header>
+  <!--Header End Here-->
+
+  <!-- Sidebar Start Here-->
+  <app-side-bar></app-side-bar>
+  <!--sidebar-End -->
+
+  <!--Dashboard Content Section Start Here-->
+  <div id="page-content-wrapper">
+    <div class="dashboardConbx">
+      <!--Welcome Rows Start Here-->
+      <div class="row clearfix">
+        <div class="welcomerw clearfix">
+          <div class="col-sm-6">
+            <div class="welcomebx">
+              <div class="row clearfix">
+                <div class="col-sm-10">
+                  <h3>Welcome to Waki Market Place</h3>
+                  <h4>Total Open Orders</h4>
+                </div>
+                <div class="col-sm-2">
+                  <h2>102</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="welcomebx">
+              <div class="row clearfix">
+                <div class="col-sm-10">
+                  <h3>Total Active Carts</h3>
+                  <h4>Abandoned Checkouts</h4>
+                </div>
+                <div class="col-sm-2">
+                  <h2 class="totalcharts">325</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Welcome Rows End Here-->
+
+      <!--Digit Rows Start Here-->
+      <div class="row clearfix">
+        <div class="digitrow clearfix">
+          <div class="col-sm-3">
+            <div class="digitbx">
+              <h3>66,163</h3>
+              <h4>Orders Pending</h4>
+              <span class="bdrbtm"></span>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="digitbx">
+              <h3>66,134</h3>
+              <h4>Orders to be prepared</h4>
+              <span class="bdrbtm"></span>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="digitbx">
+              <h3>1256</h3>
+              <h4>Orders Ready to ship</h4>
+              <span class="bdrbtm"></span>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="digitbx">
+              <h3>4567</h3>
+              <h4>Order Delivery awaited</h4>
+              <span class="bdrbtm"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Digit Rows End Here-->
+
+      <!--Total Sales Section Start Here-->
+      <div class="totalSeleswrap">
+        <div class="row clearfix">
+          <div class="col-sm-5">
+            <div class="totalSelesinfobx">
+              <h3>TOTAL SALES</h3>
+              <div class="sminfo">Collaboratively administrate empowered markets via plug-and-play networks.
+                Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer
+                directed convergence without
+                revolutionary ROI.</div>
+            </div>
+          </div>
+          <div class="col-sm-7">
+            <div class="salesgraph"><img class="img-responsive" src="../../assets/img/sales_graph.png" alt="" /></div>
+          </div>
+        </div>
+      </div>
+      <!--Total Sales Section End Here-->
+
+      <!--Orders Status Section Start Here-->
+      <div class="orderstatuswrap">
+        <div class="row eqWrap equalHMWrap clearfix">
+          <div class="col-sm-4 orderstatus">
+            <h4>ORDER STATUS</h4>
+            <div class="pieChartsbx"><img src="../../assets/img/pie_chart.png" width="267" height="288"></div>
+          </div>
+          <div class="col-sm-8 orderstatus">
+            <h4 class="activities">ACTIVITIES <span class="viewall"><a href="javascript:void(0);">View All</a></span></h4>
+            <div class="activitiesCon">
+              <div class="activitiesrow recent clearfix">
+                <div class="linebx"><span class="highlightpoint"></span></div>
+                <div class="actiinfoCon">
+                  <div class="timerw">2 mins ago</div>
+                  <div class="activisminfo">Template Builder Access (Video tutorial inside documentation)</div>
+                </div>
+              </div>
+              <div class="activitiesrow recent1hours clearfix">
+                <div class="linebx"><span class="highlightpoint"></span></div>
+                <div class="actiinfoCon">
+                  <div class="timerw">1 hour ago</div>
+                  <div class="activisminfo">Designed the wordpress theme lily created her account.</div>
+                </div>
+              </div>
+              <div class="activitiesrow clearfix">
+                <div class="linebx"><span class="highlightpoint"></span></div>
+                <div class="actiinfoCon">
+                  <div class="timerw">4:30 p.m</div>
+                  <div class="activisminfo">Your domain will expired in 13 days.</div>
+                </div>
+              </div>
+              <div class="activitiesrow clearfix">
+                <div class="linebx"><span class="highlightpoint"></span></div>
+                <div class="actiinfoCon">
+                  <div class="timerw">4:30 p.m</div>
+                  <div class="activisminfo">Your domain will expired in 13 days.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Orders Status Section End Here-->
+
+      <!--Recent Order Table Section Start Here-->
+      <div class="recentorder_tablewrap">
+        <h4>RECENT ORDERS</h4>
+        <div>
+          <h3>
+            Checkbox Selection
+            <!-- <small>
+              <a href="https://github.com/swimlane/ngx-datatable/blob/master/demo/selection/selection-chkbox.component.ts" target="_blank">
+                Source
+              </a>
+            </small> -->
+            <!-- <small>
+              <a href="javascript:void(0)" (click)="add()">Add</a> |
+              <a href="javascript:void(0)" (click)="update()">Update</a> |
+              <a href="javascript:void(0)" (click)="remove()">Remove</a> 
+            </small> -->
+          </h3>
+          <div style='float:left;width:75%'>
+            <input
+            type='text'
+            style='padding:8px;margin:15px auto;width:30%;'
+            placeholder='Type to filter the name column...'
+            (keyup)='updateFilter($event)'
+          />
+            <ngx-datatable
+              style="width: 90%"
+              class="material"
+              [rows]="rows"
+              [columns]="columns"
+
+              [columnMode]="'force'"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              [rowHeight]="'auto'"
+              [limit]="10"
+              [selected]="selected"
+              [selectionType]="'checkbox'"
+              [selectAllRowsOnPage]="false"
+              [trackByProp]="'updated'"
+              [displayCheck]="displayCheck"
+              (activate)="onActivate($event)"
+              (select)='onSelect($event)'>
+              <ngx-datatable-column
+                [width]="30"
+                [sortable]="false"
+                [canAutoResize]="false"
+                [draggable]="false"
+                [resizeable]="false"
+                [headerCheckboxable]="true"
+                [checkboxable]="true"
+                (page)="onPage($event)">
+              </ngx-datatable-column>
+            
+              <ngx-datatable-column name="product"></ngx-datatable-column>
+              <ngx-datatable-column name="Price"></ngx-datatable-column>
+              <ngx-datatable-column name="color"></ngx-datatable-column>
+              <ngx-datatable-column name="brand"></ngx-datatable-column>
+              <!-- <ngx-datatable-column name="description"></ngx-datatable-column> -->
+              <ngx-datatable-column name="status"></ngx-datatable-column>
+              
+            </ngx-datatable>
+          </div>
+          <!-- <div class='selected-column'>
+            <h4>Selections <small>({{selected?.length}})</small></h4>
+            <ul>
+              <li *ngFor='let sel of selected'>
+                {{sel.name}}
+              </li>
+              <li *ngIf="!selected?.length">No Selections</li>
+            </ul>
+          </div> -->
+        </div>
+    
+
+
+
+
+        <!-- <div>
+          <ngx-datatable style="width: 100%" class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+            [footerHeight]="50" [rowHeight]="'auto'" [limit]="5" [selected]="selected" [selectionType]="'checkbox'"
+            [selectAllRowsOnPage]="false" [displayCheck]="displayCheck" (activate)="onActivate($event)" (select)='onSelect($event)'>
+            <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+              [resizeable]="false" [headerCheckboxable]="true" [checkboxable]="true">
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Product"></ngx-datatable-column>
+            <ngx-datatable-column name="Customer"></ngx-datatable-column>
+            <ngx-datatable-column name="Location"></ngx-datatable-column>
+            <ngx-datatable-column name="Quantity"></ngx-datatable-column>
+            <ngx-datatable-column name="Status"></ngx-datatable-column>
+          </ngx-datatable>
+        </div> -->
+        <!-- <div class="row">
+          <div class="col-md-4">
+            <input *ngIf="config.filtering" placeholder="Filter all columns" [ngTableFiltering]="config.filtering"
+              class="form-control" (tableChanged)="onChangeTable(config)" />
+          </div>
+        </div>
+        <br>
+        <ng-table [config]="config" (tableChanged)="onChangeTable(config)" (cellClicked)="onCellClick($event)" [rows]="rows"
+          [columns]="columns">
+        </ng-table> -->
+        <!-- <pagination *ngIf="config.paging" class="pagination-sm" [(ngModel)]="page" [totalItems]="length" [itemsPerPage]="itemsPerPage"
+          [maxSize]="maxSize" [boundaryLinks]="true" [rotate]="false" (pageChanged)="onChangeTable(config, $event)"
+          (numPages)="numPages = $event">
+        </pagination> -->
+        <!-- <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre> -->
+
+
+
+
+      </div>
+      <!--Recent Order Table Section End Here-->
+
+    </div>
+  </div>
+  <!--Dashboard Content Section End Here-->
+
+</div>
+<!--Dashboard Screen End Here-->

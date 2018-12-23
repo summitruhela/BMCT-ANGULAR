@@ -1,0 +1,363 @@
+@media only screen and (max-width: 1800px) {
+.aboutwakiCon .sminfo, .business_detailswrap .businConbx .sminfo {
+	font-size: 16px;
+	line-height: 32px;
+}
+.wakilogo, .aboutwakiCon {
+	left: 60px;
+}
+.wakilogo {
+	top: 40px;
+}
+.aboutwakiCon {
+	top: 190px;
+}
+.aboutwakiCon .wakitextrow img, .business_detailswrap .businesstextrow img {
+	width: 420px;
+}
+.aboutwakiCon .emailrow .form-control, .btn-primary.loginbtn, .business_detailswrap .businConbx .businessfrombx .form-control, .picker .pc-element, .picker .pc-trigger, .picker .pc-select .pc-list li, .select-items div, .select-selected, .btn-primary.businessbtn {
+	font-size: 16px;
+}
+.business_detailswrap .businConbx {
+	margin-left: 60px;
+}
+.businessrttopbg {
+	width: 500px;
+	height: 570px;
+}
+.mybrand input[type=text],.mybrand button {
+	font-size:16px;
+}
+.uploadimgbx,.uploadimgbx .fileinput .thumbnail {
+	width: 125px;
+	height: 125px;
+}
+}
+@media only screen and (max-width: 1600px) {
+.uploadimgbx,.uploadimgbx .fileinput .thumbnail {
+	width: 105px;
+	height: 105px;
+}
+}
+@media only screen and (max-width: 1440px) {
+.aboutwakiCon {
+	top: 170px;
+}
+.aboutwakiCon .wakitextrow img, .business_detailswrap .businesstextrow img {
+	width: 350px;
+}
+.aboutwakiCon .sminfo, .business_detailswrap .businConbx .sminfo {
+	font-size: 15px;
+	line-height: 28px;
+}
+.aboutwakiCon .emailrow .form-control {
+	padding: 13px 12px;
+}
+.btn-primary.loginbtn {
+	padding: 13px 24px;
+}
+.aboutwakiCon .emailrow .form-control, .btn-primary.loginbtn {
+	font-size: 15px;
+}
+.businessrttopbg {
+	width: 440px;
+	height: 502px;
+}
+.uploadimgbx,.uploadimgbx .fileinput .thumbnail {
+	width: 90px;
+	height: 90px;
+}
+}
+@media only screen and (max-width: 1320px) {
+.aboutwakiCon .wakitextrow img, .business_detailswrap .businesstextrow img {
+	width: 300px;
+}
+.aboutwakiCon .sminfo, .business_detailswrap .businConbx .sminfo {
+	font-size: 14px;
+	line-height: 24px;
+}
+.business_detailswrap .businConbx .businessfrombx .form-control, .picker .pc-element, .picker .pc-trigger, .picker .pc-select .pc-list li, .select-items div, .select-selected, .btn-primary.businessbtn {
+	font-size: 14px;
+}
+.businessrttopbg {
+	width: 400px;
+	height: 456px;
+}
+.aboutwakiCon .emailrow .form-control {
+	width: 300px;
+}
+.dashboardConbx {
+    padding: 30px;
+}
+.dashboardConbx .welcomebx,.dashboardConbx .digitbx{
+    padding: 15px;
+}
+.totalSeleswrap {
+    padding: 30px 20px;
+}
+.orderstatuswrap .orderstatus{
+	padding:20px;
+}
+.activitiesCon{
+	padding-left:10px;
+}
+.sidemenubtn{
+	margin-left:30px;
+}
+.dashboardConbx .digitbx h4{
+	font-size:12px;
+}
+.dashboardConbx .welcomebx h2{
+	font-size:21px;
+}
+.dashboardConbx .welcomebx h3,.totalSelesinfobx .sminfo{
+	font-size:16px;
+}
+.headers .menuiconbx .header_rtbx{
+	right:30px;
+}
+.addproducts{
+	margin:30px;
+}
+.totalSelesinfobx h3{
+	font-size:24px;
+}
+.sidelogobx{
+	padding:0 30px;
+}
+}
+ @media only screen and (max-width: 1220px) {
+.wakilogo {
+	left: 20px;
+	top: 30px;
+}
+.aboutwakiCon {
+	left: 20px;
+	top: 150px;
+}
+.business_detailswrap .businConbx {
+	padding-top: 150px;
+}
+.business_detailswrap .businConbx {
+	margin-left: 20px;
+}
+.aboutwakiCon .emailrow .form-control {
+	width: 100%;
+	margin-right: 0;
+}
+.btn-primary.loginbtn {
+	width: 100%;
+	padding: 12px 0;
+	margin-top: 15px;
+}
+}
+@media only screen and (max-width: 1200px) {
+.dashboardConbx .digitbx.mnbtm,.dashboardConbx .welcomebx.mnbtm{
+	margin-bottom:30px;
+}
+}
+ @media only screen and (max-width: 1170px) {
+.aboutwakiCon {
+	width: 35%;
+	top: 160px;
+}
+}
+ @media only screen and (max-width: 1023px) {
+.loginscreenwrap {
+	background: none;
+	background-color:#fff;
+}
+.aboutwakiCon {
+	width: 45%;
+	top: 210px;
+}
+.businessrttopbg {
+	width: 300px;
+	height: 342px;
+}
+.business_detailswrap .businConbx {
+	width: 56%;
+}
+.business_detailswrap .businConbx .businessfrombx {
+	padding-right: 0;
+}
+.aboutwakiCon {
+	position: static;
+	left: auto;
+	top: auto;
+	width: auto;
+	padding: 160px 20px 20px 20px
+}
+}
+@media(min-width:991px) {
+#wrapper {
+	padding-left: 360px;
+}
+#wrapper.toggled {
+	padding-left: 0px;
+}
+#wrapper.toggled .headers {
+	padding-left: 0px;
+}
+#sidebar-wrapper {
+	width: 360px;
+}
+#wrapper.toggled #sidebar-wrapper {
+	width: 0px;
+}
+#page-content-wrapper {
+	/*padding: 20px;*/
+	position: relative;
+}
+#wrapper.toggled #page-content-wrapper {
+	position: relative;
+	margin-right: 0;
+}
+#wrapper.toggled .footer.dash .nav > li > a {
+	padding: 0px 10px;
+	font-size: 14px;
+}
+#wrapper.toggled .footer.dash p.copy {
+	font-size: 14px;
+}
+}
+@media only screen and (max-width: 991px) {
+.sidelogobx{
+	width:210px;
+	box-shadow:none;
+}
+#wrapper.toggled .sidelogobx {
+    width: 210px;
+    box-shadow: none;
+}
+#wrapper.toggled .headers {
+    padding-left: 0px;
+}
+.sidemenubtn {
+    margin-left: 20px;
+}
+#wrapper.toggled {
+    padding-left: 0;
+}
+#wrapper.toggled #page-content-wrapper{
+	margin-right:0;
+}
+}
+@media only screen and (max-width: 767px) {
+.wakilogo {
+	width: 120px;
+	height: 42px;
+	left: 50%;
+	margin-left: -60px;
+}
+.aboutwakiCon .wakitextrow img, .business_detailswrap .businesstextrow img {
+	width: 240px;
+}
+.aboutwakiCon {
+	padding-top: 120px;
+}
+.businessrttopbg {
+	display: none;
+}
+.business_detailswrap .businConbx {
+	width: auto;
+	margin: 0 20px;
+	padding-top: 130px;
+}
+.headers{
+	height:70px;
+}
+#wrapper.toggled .sidelogobx {
+    width: 140px;
+}
+.sidelogobx {
+	width:140px;
+	height:70px;
+    padding: 0 20px;
+}
+.sidelogo{
+	width:100px;
+	height:35px;
+	background-size: 100px 35px;
+	margin-top:20px;
+}
+.headers .menuiconbx .pgnm{
+	display:none;
+}
+.headers .menuiconbx .header_rtbx {
+	top:16px;
+    right: 20px;
+}
+.sidemenubtn {
+	margin:25px;
+    margin-left: 10px;
+}
+#sidebar-wrapper{
+	top:70px;
+}
+#page-content-wrapper{
+	padding-top:70px;
+}
+.dashboardConbx {
+    padding: 20px 15px;
+}
+.dashboardConbx .digitbx.mnbtm, .dashboardConbx .welcomebx.mnbtm,.dashboardConbx .welcomerw, .dashboardConbx .digitrow,.totalSeleswrap,.orderstatuswrap .orderstatus {
+    margin-bottom: 20px;
+}
+.orderstatuswrap {
+    margin-bottom: 0px;
+}
+.orderstatuswrap .eqWrap{
+	display:block;
+}
+#sidebar-wrapper{
+	left:280px;
+	margin-left:-280px;
+}
+#wrapper.toggled #sidebar-wrapper{
+	width:280px;
+}
+.userprofilebx {
+    padding: 15px;
+}
+.userprofilebx .usercirbx{
+	width:50px;
+	height:50px;
+}
+.userprofilebx .userpnm {
+    margin-left: 70px;
+    padding-top: 5px;
+}
+.sidemenuwrap .nav > li > a {
+    padding: 16px 50px 16px 20px;
+    font-size: 14px;
+    color: #3d3d3d;
+}
+.navbar-nav{
+	margin:0;
+}
+.dashboardConbx .digitbx.mnbtm767{
+	margin-bottom: 20px;
+}
+.addproducts {
+    margin: 20px;
+	padding:20px;
+}
+.addproducts .addproimgbx{
+	margin-top:30px;
+	margin-bottom:30px;
+}
+.addproducts h3{
+	font-size:18px;
+}
+.addproducts .addprobtnrow .btn-primary.addpro{
+	padding:14px 20px;
+	font-size:14px;
+}
+}
+@media only screen and (max-width: 359px) {
+.addproducts .addprobtnrow .btn-primary.addpro {
+    padding: 14px 12px;
+    font-size: 12px;
+}
+}

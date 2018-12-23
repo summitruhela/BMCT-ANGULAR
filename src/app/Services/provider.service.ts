@@ -1,74 +1,75 @@
+
 import { Injectable } from '@angular/core';
-import { ToastrService} from 'ngx-toastr';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { Observable } from 'rxjs';
-
-
-
+import { ToastrService } from 'ngx-toastr';
+import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProviderService {
-  pageIs:any=''
-    // baseUrl='http://172.16.16.220:1419/v2/'
-   baseUrl='http://ec2-52-76-162-65.ap-southeast-1.compute.amazonaws.com:1419/v2/'
-getHttpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':'application/json'
-  })
-}
-  constructor(private toastr: ToastrService, public http: HttpClient, private spinner: NgxSpinnerService) { }
-  success(msg){
-    this.toastr.success(msg)
-  }
-  clear(){
-    this.toastr.clear()
-  }
+export class DataService {
+  userdata = {}
+  nameClicked = { 'userName': '', 'email': '', 'mobileNumber': '' }
+  edit_id: any;
+  editdata: any;
+  optionSubject = new Subject();
+  optionObs = this.optionSubject.asObservable();
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
+  baseUrl='http://13.126.131.184:5050/' //!live 
 
-  error(msg){
-    this.toastr.error(msg)
+  typeLogin: string;
+  changeOption(msg) {
+    this.optionSubject.next(msg)
   }
-
-  getApi(url) {   
-		return this.http.get(this.baseUrl + url, this.getHttpOptions);
-	}
-
-	postApi(url, data): Observable<any> {
-		return this.http.post(this.baseUrl + url,data, this.getHttpOptions);
-  }
-  getCountryCodeJson(){
-    return this.http.get('assets/json/countryCodes.json');
-  }
-  getCountryCJson(){
-    return this.http.get('assets/json/countries.json');
-  }
-
-  callGet(url){
-  
-    let HttpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':'application/json',
-        'token': JSON.parse(localStorage.token).token
-      })
+  postApi(url, data, isHeader): Observable<any> {
+    console.log(`entered in post api `)
+    if (isHeader == 0) {
+      console.log(`header 0`)
+      var httpOptions;
+      httpOptions = {
+        headers: new HttpHeaders({ "Content-Type": "application/json" })
+      }
+      return this.http.post((this.baseUrl + url), data, httpOptions)
     }
-    return this.http.get(this.baseUrl + url, HttpOptions);
-  }
+    else if (isHeader == 1) {
+      var httpOptions;
+      httpOptions = {
 
-  callPost(url, data){
-  let HttpOptions = {
         headers: new HttpHeaders({
-          'Content-Type':'application/json',
-          'token': JSON.parse(localStorage.token).token
+          "accessToken": localStorage.getItem("token"),
+          // "_id": localStorage.adminId,
+          "Content-Type": "application/json"
         })
       }
-    return this.http.post(this.baseUrl + url,data, HttpOptions);
+      return this.http.post((this.baseUrl + url), data, httpOptions)
+    }
   }
-  
-  spinnerShow(){
-    this.spinner.show()
+  getApi(url, isHeader) {
+    if (isHeader == 0) {
+      var httpOptions;
+      httpOptions = {
+        headers: new HttpHeaders({ "Content-Type": "application/json" })
+      }
+      return this.http.get((this.baseUrl + url), httpOptions)
+    }
+    else if (isHeader == 1) {
+      console.log('token', localStorage.token)
+      var httpOptions;
+      httpOptions = {
+        headers: new HttpHeaders({ "token": localStorage.token, "_id": localStorage.adminId, "Content-Type": "application/json" })
+      }
+      return this.http.get((this.baseUrl + url), httpOptions)
+    }
   }
-  spinnerHide(){
-    this.spinner.hide()
+
+  showSuccess(msg) {
+    this.toastr.success(msg);
   }
+  showError(msg) {
+    this.toastr.error(msg)
+  }
+  showBug(msg)
+  {
+    this.toastr.info(msg)
+  }
+
 }

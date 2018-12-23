@@ -14,23 +14,25 @@ export class AppComponent {
       if(x instanceof NavigationEnd) {       
         window.scroll(0,0)
         let currUrl = this.router.url.indexOf('?') == -1 ? this.router.url.split('/')[1] : this.router.url.slice(1,this.router.url.indexOf('?'))
-          if(localStorage.getItem('token') === null){
-            console.log(this.router.url)         
-            
-                /* if(!(this.router.url === '/login' || this.router.url === '/forgot-password' || this.router.url.substring(this.router.url.lastIndexOf("4200/") + 4,this.router.url.lastIndexOf("/?token")) === '/reset-password')){
-                  this.router.navigate(['/login']);
-                }   */
-                if(!(currUrl === 'login' || currUrl === 'forgot-password' || currUrl === 'reset-password')){
-                  this.router.navigate(['/login']);
-                }  
-              } else {
-                /* if(this.router.url === '/login' || this.router.url === '/forgot-password' || this.router.url.substring(this.router.url.lastIndexOf("4200/") + 4,this.router.url.lastIndexOf("/?token")) === '/reset-password'){
-                  this.router.navigate(['/dashboard'])
-                } */
-                if(currUrl === 'login' || currUrl === 'forgot-password' || currUrl === 'reset-password'){
-                  this.router.navigate(['/dashboard'])
-                }
-              }
+        console.log(this.router.url)  
+        if (x instanceof NavigationEnd) {
+          window.scroll(0, 0)
+          let currUrl = this.router.url.indexOf('?') == -1 ? this.router.url.split('/')[1] : this.router.url.slice(1, this.router.url.indexOf('?'))
+  
+          if (localStorage.getItem('token') === null) {
+            if (localStorage.getItem('email') === null) {
+              this.router.navigate(['/login']);
+            }
+            else{
+              this.router.navigate(['/enterPassword']);
+            }
+          }
+          else if (!(localStorage.getItem('token') === null)) {
+            if (currUrl === 'enterPassword' || currUrl === 'login') {
+              this.router.navigate(['/business_details'])
+            }
+          }
+        }
       }
    });
     console.log('this.router.url', this.router.url)

@@ -2,82 +2,88 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {TooltipModule} from "ngx-tooltip";
+import { NgxPaginationModule } from 'ngx-pagination';
+import { TooltipModule } from "ngx-tooltip";
 
 // import { CKEditorModule } from 'ngx-ckeditor';
 import { CKEditorModule } from 'ng2-ckeditor';
-import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './Components/login/login.component';
-import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { MerchantManagementComponent } from './Components/merchant-management/merchant-management.component';
-import { StaticContentManagementComponent } from './Components/static-content-management/static-content-management.component';
-import { ChangePasswordComponent } from './Components/change-password/change-password.component';
-import { StaticContentViewComponent } from './Components/static-content-view/static-content-view.component';
-import { StaticContentEditComponent } from './Components/static-content-edit/static-content-edit.component';
-import { BannerManagementComponent } from './Components/banner-management/banner-management.component';
-import { BannerEditComponent } from './Components/banner-edit/banner-edit.component';
-import { BannerViewComponent } from './Components/banner-view/banner-view.component';
-import { MerchantViewComponent } from './Components/merchant-view/merchant-view.component';
 import { HeaderFooterComponent } from './Common/header-footer/header-footer.component';
-import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
-import { MerchantEditComponent } from './Components/merchant-edit/merchant-edit.component';
-import { SubAdminManagementComponent } from './Components/sub-admin-management/sub-admin-management.component';
-import { SubAdminViewComponent } from './Components/sub-admin-view/sub-admin-view.component';
-import { SubAdminAddComponent } from './Components/sub-admin-add/sub-admin-add.component';
 
-import { SocketService } from './Services/socket.service';
-import { MerchantFormComponent } from './Components/merchant-form/merchant-form.component';
+// import { SocketService } from './Services/socket.service';
 import { GooglePlacesDirective } from './google-places.directive';
+import { WakiLoginComponent } from './Components/waki-login/waki-login.component';
+import { SideBarComponent } from './Components/side-bar/side-bar.component';
+import { EnterPasswordScreenComponent } from './Components/enter-password-screen/enter-password-screen.component';
+import { BusinessDetailComponent } from './Components/business-detail/business-detail.component';
 
+import { HomePageVendorComponent } from './Components/home-page-vendor/home-page-vendor.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { AddProductComponent } from './Components/add-product/add-product.component';
+import { AddProductScreenComponent } from './Components/add-product-screen/add-product-screen.component';
+import { ImageUploaderModule } from 'ngx-image-uploader';
+// import { FancyImageUploaderModule } from 'ng2-fancy-image-uploader';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgSelectModule } from 'ng-custom-select'
+import { TagInputModule } from 'ngx-chips';
+import { EditproductComponent } from './Components/editproduct/editproduct.component';
+import { DynamicFormModule } from 'ngx-dynamic-form';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+// import { Ng2TableModule } from 'ngx-datatable';
+// import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
+import { Ng2TableModule} from 'ng2-table/ng2-table';
+// import { ChidComponent } from './chid/chid.component';
+import { ChildComponent } from './Components/child/child.component';
+import { TestSumitComponent } from './Components/test-sumit/test-sumit.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    ForgotPasswordComponent,
-    DashboardComponent,
-    MerchantManagementComponent,
-    StaticContentManagementComponent,
-    ChangePasswordComponent,
-    StaticContentViewComponent,
-    StaticContentEditComponent,
-    BannerManagementComponent,
-    BannerEditComponent,
-    BannerViewComponent,
-    MerchantViewComponent,
-    HeaderFooterComponent,
-    ResetPasswordComponent,
-    MerchantEditComponent,
-    SubAdminManagementComponent,
-    SubAdminViewComponent,
-    SubAdminAddComponent,
-    MerchantFormComponent,
-    GooglePlacesDirective
+    // HeaderFooterComponent,
+    GooglePlacesDirective,
+    WakiLoginComponent,
+    SideBarComponent,
+    EnterPasswordScreenComponent,
+    BusinessDetailComponent,
+    HomePageVendorComponent,
+    HeaderComponent,
+    AddProductComponent,
+    AddProductScreenComponent,
+    EditproductComponent,
+    // ChidComponent,
+    ChildComponent,
+    TestSumitComponent,
+    // FancyImageUploaderModule
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    FormsModule, 
+    AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    NgxSpinnerModule,
     HttpClientModule,
     NgxSpinnerModule,
-    NgxPaginationModule ,
-    CKEditorModule,     
-    TooltipModule
-   
+    NgxPaginationModule,
+    CKEditorModule,
+    TooltipModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    NgSelectModule,
+    TagInputModule,
+    NgxDatatableModule,
+    Ng2TableModule,
+    ImageUploaderModule,
+    DynamicFormModule,
   ],
-  providers: [CookieService,SocketService],
+  entryComponents: [
+    ChildComponent
+  ],
+  providers: [CookieService,/* SocketService */],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

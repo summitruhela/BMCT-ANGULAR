@@ -1,0 +1,366 @@
+<div id="wrapper">
+  <!--Header Start Here-->
+  <app-header></app-header>
+  <!--Header End Here-->
+
+  <!-- Sidebar Start Here-->
+  <app-side-bar></app-side-bar>
+  <!--sidebar-End -->
+  <!--Add Products Content Section Start Here-->
+  <div id="page-content-wrapper">
+      <form [formGroup]='myGroup' (ngSubmit)="onSubmit()" >
+
+      <div class="dashboardConbx">
+          <!-- <form [formGroup]='myGroup' (ngSubmit)="onSubmit()" > -->
+        <div class="addproductheadingrow">
+          <h3>Lorem Ipsum Heading</h3>
+          <div class="addproheadingbtn">
+            <button type="button" class="btn btn-primary addprobtn cancel">Cancel</button>
+            <button  (click)="saveProduct(myGroup.value)"  type="button" class="btn btn-primary addprobtn">Save</button>
+          </div>
+        </div>
+        <div class="productsviewrow">
+          <div class="row eqWrap equalHMWrap clearfix">
+            <!--Text Editor Section Start Here-->
+            <div class="col-sm-5 texteditorwrap">
+              <div class="form-group">
+                <label>Title</label>
+                <input class="form-control" type="text" placeholder="Product Name Here"  [formControl]="myGroup.controls['title']" ngDefaultControl/>
+                
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <div class="texteditorbox"><img class="img-responsive" width="606" height="255" />
+
+                  <ckeditor [(ngModel)]="ckeditorContent" [formControl]="myGroup.controls['description']" ngDefaultControl>
+                    <ckbutton [name]="'saveButton'" [command]="'saveCmd'" (click)="save($event)" [icon]="'save.png'"
+                      [label]="'Save Document'" [toolbar]="'clipboard,1'">
+                    </ckbutton>
+                  </ckeditor>
+
+                </div>
+              </div>
+            </div>
+            <!--Text Editor Section End Here-->
+            <!-- </form> -->
+            <!--Image Upload Section Start Here-->
+            <div class="col-sm-7 fileuploadbox">
+              <label>Product Images</label>
+              <!-- <input type="file" (change)='onFileChanged($event)' accept="image/jpeg,image/jpg,image/png"> -->
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png" [formControl]="myGroup.controls['image1']" ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png" [formControl]="myGroup.controls['image2']" ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png" [formControl]="myGroup.controls['image3']" ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png" [formControl]="myGroup.controls['image4']" ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png" [formControl]="myGroup.controls['image5']" ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png" [formControl]="myGroup.controls['image6']" ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png"[formControl]="myGroup.controls['image7']"ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+
+              <div class="uploadimgbx">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                  <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                  <div> <span class="btn btn-default btn-file">
+                      <input id="input-22" type="file" name="..." (change)='onFileChanged($event)' accept=".jpg,.gif,.png" [formControl]="myGroup.controls['image8']" ngDefaultControl>
+                    </span> </div>
+                </div>
+              </div>
+            </div>
+            <!--Image Upload Section End Here-->
+          </div>
+        </div>
+      
+        <div class="row productcategorywrap clearfix">
+          <div class="col-sm-5 padwd10">
+            <!--Product Category Section Start Here-->
+            <div class="productCategorybox">
+              <div class="form-group">
+                <label>Product Category</label>
+
+                <select class="form-control" (change)="getCatgory($event.target.value)" [formControl]="myGroup.controls['productcategory']" ngDefaultControl>
+                  <option value="">select category</option>
+                  <option *ngFor="let c of category" [value]="c._id" >{{c.categoryName}}</option>
+                </select>
+
+              </div>
+              <div class="form-group">
+                <label>Product Subcategory</label>
+                <select class="form-control" (change)="SubCatorydata($event.target.value)" [formControl]="myGroup.controls['productsubcategory']" ngDefaultControl>
+                  <option value="">select SubCategory</option>
+                  <option *ngFor="let c of getSubCatorydata" [value]="c._id" >{{c.subCategoryName}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Product Type</label>
+                <select class="form-control" (change)="getProductCategoryId($event.target.value)" [formControl]="myGroup.controls['producttype']" ngDefaultControl>
+                  <option value="">Select Type</option>
+                  <option *ngFor="let c of productCategoryname" [value]="c._id" >{{c.productcategoryName}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Product Brand</label>
+                <select class="form-control" (change)="getBrandId($event.target.value)"  [formControl]="myGroup.controls['productbrand']" ngDefaultControl>
+                  <option value="">select Brand</option>
+                  <option *ngFor="let c of getBrandList" [value]="c._id">{{c.brandName}}</option>
+                </select>
+              </div>
+              <div class="form-group mybrand clearfix">
+                <!-- <form [formGroup]='formgroup'> -->
+                <input type="text" placeholder="My Brand" [formControl]="myGroup.controls['addBrand']"/>
+                <button type="submit" (click)="addBrand()"><i class="fa fa-check" aria-hidden="true"></i></button>
+                <!-- </form> -->
+              </div>
+              <div class="form-group clearfix">
+                <label>Product Tags</label>
+                <tag-input [(ngModel)]='itemsAsObjects' [placeholder]="'Enter a Tags'" [onTextChangeDebounce]="500" [formControl]="myGroup.controls['searchtag']"></tag-input>
+                <!-- <tag-input [ngModel]="itemsAsObjects" ></tag-input> -->
+              </div>
+            </div>
+            <!--Product Category Section End Here-->
+
+            <!--Modify Variants Table Section Start Here-->
+            <div class="modify_variants">
+              <h4>Modify Variants</h4>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th align="left" valign="middle">Variant</th>
+                    <th>Price</th>
+                    <th>SKU</th>
+                    <th>Inventory</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ![(ngModel)]='combinationOfVariants' ngDefaultControl -->
+                  <tr *ngFor="let item of dataLoop;  let in = index" [formControl]="myGroup.controls['combinationOfVariants']" ngDefaultControl>
+                    <td><span class="checkboxbx">
+                        <input type="checkbox" id="test1" />
+                        <label for="test1">&nbsp;</label>
+                      </span>
+                      <span class="sizenm">{{dataLoop[in]}}</span> <span class="colornm"></span>
+                    </td>
+                    <td><input class="form-control" type="text" placeholder="230" /></td>
+                    <td><input class="form-control" type="text" placeholder="BHJ89" /></td>
+                    <td><input class="form-control" type="text" placeholder="1234" /></td>
+                  </tr>
+                  <!-- <tr>
+                  <td><span class="checkboxbx">
+                      <input type="checkbox" id="test2" />
+                      <label for="test2">&nbsp;</label>
+                    </span><span class="sizenm">XS</span> <span class="colornm">Pink</span></td>
+                  <td><input class="form-control" type="text" placeholder="230" /></td>
+                  <td><input class="form-control" type="text" placeholder="BHJ89" /></td>
+                  <td><input class="form-control" type="text" placeholder="1234" /></td>
+                </tr>
+                <tr>
+                  <td><span class="checkboxbx">
+                      <input type="checkbox" id="test3" />
+                      <label for="test3">&nbsp;</label>
+                    </span><span class="sizenm">XS</span> <span class="colornm">Blue</span></td>
+                  <td><input class="form-control" type="text" placeholder="230" /></td>
+                  <td><input class="form-control" type="text" placeholder="BHJ89" /></td>
+                  <td><input class="form-control" type="text" placeholder="1234" /></td>
+                </tr> -->
+                </tbody>
+              </table>
+            </div>
+            <!--Modify Variants Table Section End Here-->
+          </div>
+          <div class="col-sm-7 padwd10">
+            <div class="row clearfix">
+              <!--Selling Price Section Start Here-->
+              <div class="col-sm-6 pdrightwd10">
+                <div class="productCategorybox">
+                  <div class="form-group">
+                    <label>Selling Price</label>
+                    <input class="form-control" type="text" placeholder="499" [(ngModel)]="SellingPrice"  [formControl]="myGroup.controls['sellingprice']"/>
+                  </div>
+                  <div class="form-group">
+                    <label>Cost/Item</label>
+                    <input class="form-control" type="text" placeholder="399" [formControl]="myGroup.controls['costprice']" />
+                  </div>
+                  <div class="form-group">
+                    <label>Item Weight</label>
+                    <input class="form-control" type="text" placeholder="0.5"  [formControl]="myGroup.controls['itemweight']"/>
+                  </div>
+                </div>
+                <!--Selling Price Section End Here-->
+              </div>
+              <!--Inventory Section Start Here-->
+              <div class="col-sm-6 pdleftwd10">
+                <div class="productCategorybox">
+                  <div class="form-group">
+                    <label>Inventory SKU</label>
+                    <input class="form-control" type="text" placeholder="BUI" [formControl]="myGroup.controls['InventorySKU']" />
+                  </div>
+                  <div class="form-group">
+                    <label>Quantity</label>
+                    <input class="form-control" type="text" placeholder="50" [formControl]="myGroup.controls['quantity']" />
+                  </div>
+                  <div class="form-group">
+                    <label>Product Type</label>
+                    <select class="form-control" [formControl]="myGroup.controls['trialPack']">
+                      <option value="volvo">Avaiable for try</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!--Inventory Section End Here-->
+            </div>
+
+            <!--Variants Section Start Here-->
+            <div class="row clearfix" *ngIf='true'>
+              <div class="col-sm-12">
+                <div class="productCategorybox">
+                  <div class="variants">
+                    <h4>Variants</h4>
+                    <div class="sminfo">Swimming hundreds of feet beneath the ocean’s surface in many parts of the
+                      world
+                      are prolific aey construct one or more spacious houses” that can exceed three feet in length.
+                    </div>
+                    <div class="variantsoption">
+                      <div class="row clearfix">
+                        <div class="col-sm-3">
+                          <label>Option name</label>
+                        </div>
+                        <div class="col-sm-6">
+                          <label>Option Values</label>
+                        </div>
+                        <div class="col-sm-3">
+                          <label>&nbsp;</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="row clearfix">
+                          <!-- <div class="col-sm-3">
+                          <input class="form-control" type="text" value="Color" (change)='getOptionKey($event.target.value)' />
+                        </div>
+                        <div class="col-sm-6">
+                          <tag-input [(ngModel)]='itemsAsObjects' [placeholder]="'Enter a Tags'" [onTextChangeDebounce]="500"></tag-input>
+                        </div> -->
+                          <!-- <div class="col-sm-3">
+                          <a (click)="createComponent()">Add Option</a>
+                        </div> -->
+
+
+                          <!-- <button type="button" (click)="createComponent()">
+                          I am Parent, Create Child
+                        </button> -->
+
+                          <!-- //!asdfj -->
+                          <div>
+                            <form [formGroup]="myForm" novalidate (ngSubmit)="saveVariants(myForm)" ngDefaultControl>
+                              <div class="form-group">
+                                <!-- <label>Front End</label> -->
+                                <!-- <input type="text" class="form-control" formControlName="front"> -->
+                              </div>
+                              <div formArrayName="languages">
+                                <div *ngFor="let language of myForm.controls.languages.controls; let i=index" class="panel panel-default">
+                                  <div class="panel-heading variantsoption">
+                                    <span>Language {{i + 1}}</span>
+                                    <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.languages.controls.length > 1"
+                                      (click)="removeLanguage(i)"></span>
+                                  </div>
+                                  <div class="panel-body" [formGroupName]="i">
+                                    <div class="form-group col-xs-6">
+                                      <label>Option</label>
+                                      <input type="text" class="form-control" formControlName="React"></div>
+                                    <div class="form-group col-xs-6">
+                                      <label>Value</label>
+                                      <!-- <input type="text" class="form-control" formControlName="Angular"> -->
+                                      <tag-input formControlName="Angular" [placeholder]="'Enter a Tags'"
+                                        [onTextChangeDebounce]="500"></tag-input>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="margin-20">
+                                <a (click)="addLanguage()" style="cursor: default">Add another Language </a></div>
+                              <div class="margin-20">
+                                <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button></div>
+                              <div class="clearfix"></div>
+                              <div class="margin-20">
+                                <div>myForm details:-</div>
+                                <!-- <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre> -->
+                                <!-- <pre>form value: <br>{{myForm.value | json}}</pre> -->
+                                <p> {{dataLoop|json}}</p>
+                              </div>
+                            </form>
+                          </div>
+                          <!--//! asdfasdf -->
+                        </div>
+                      </div>
+                      <div>
+                        <ng-template #viewContainerRef></ng-template>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Variants Section End Here-->
+
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <!-- </form> -->
+  <!--Add Products Section End Here-->
